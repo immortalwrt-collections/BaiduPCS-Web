@@ -11,7 +11,7 @@ local running=(luci.sys.call("pidof baidupcs-web > /dev/null") == 0)
 
 local button = ""
 local state_msg = ""
-local trport = uci:get_first("baidupcs-web", "config", "port")
+local trport = uci:get("baidupcs-web", "config", "port")
 if running  then
 	button = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type=\"button\" value=\" " .. translate("打开BaiduPCS-Web管理界面") .. " \" onclick=\"window.open('http://'+window.location.hostname+':" .. trport .. "')\"/>"
 end
